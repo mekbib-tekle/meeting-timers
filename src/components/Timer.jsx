@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Card, Col, Icon } from 'antd';
+import {
+  Popconfirm, Card, Col, Icon,
+} from 'antd';
 import { hhMMss } from '../utils';
 
 class Timer extends Component {
@@ -39,16 +41,25 @@ class Timer extends Component {
     }
 
     render() {
-      const { timer, onClick } = this.props;
+      const { timer, onClick, onDelete } = this.props;
       const { time } = this.state;
       return (
-          <Col span={8}>
-              <Card title={timer.name} bordered onClick={() => { this.toggleRunner(timer); onClick(timer); }} className={timer.isRunning ? 'running' : 'paused'}>
-                  <div>{hhMMss(time)}</div>
-                  { timer.isRunning
-                    ? (<div><Icon type="pause-circle" theme="outlined" /> Pause Timer</div>)
-                    : (<div><Icon type="play-circle" theme="outlined" /> Start Timer </div>)
-            }
+          <Col span={6}>
+              <Card title={timer.name} bordered className={timer.isRunning ? 'running' : 'paused'}>
+                  <div onClick={() => { this.toggleRunner(timer); onClick(timer); }} className="timer-btn-area">
+                      <div>{hhMMss(time)}</div>
+                      { timer.isRunning
+                        ? (<div><Icon type="pause-circle" theme="outlined" /> Pause Timer</div>)
+                        : (<div><Icon type="play-circle" theme="outlined" /> Start Timer </div>)
+                      }
+
+                  </div>
+
+                  <div className="delete-timer">
+                      <Popconfirm title="Are you sure?" onConfirm={() => onDelete(timer)} okText="Yes" cancelText="No">
+                          <Icon type="close-circle" theme="outlined" />
+                      </Popconfirm>
+                  </div>
               </Card>
           </Col>);
     }

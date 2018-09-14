@@ -49,6 +49,14 @@ class Timers extends Component {
       });
     }
 
+    onDelete = (timer) => {
+      const { timers } = this.state;
+      const _timers = timers.filter(t => t.name !== timer.name);
+      this.setState({
+        timers: _timers,
+      });
+    }
+
     activateTimer = (timer) => {
       const { timers } = this.state;
 
@@ -74,7 +82,7 @@ class Timers extends Component {
                   <Row gutter={16}>
                       {timers && timers.length
                         ? timers.sort(this.sortByName).map(timer => (
-                            <Timer timer={timer} key={timer.name} onClick={_timer => this.activateTimer(_timer)} />)
+                            <Timer timer={timer} key={timer.name} onClick={_timer => this.activateTimer(_timer)} onDelete={this.onDelete} />)
                         )
                         : <EmptyTimer />}
                   </Row>

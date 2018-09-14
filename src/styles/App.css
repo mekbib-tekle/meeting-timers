@@ -25,7 +25,6 @@
 .ant-card {
   margin-bottom: 20px !important;
   margin-right: 10px !important;
-  cursor: pointer;
 }
 
 .ant-card.running {
@@ -34,4 +33,17 @@
 
 .ant-card.paused {
   background-color: cornsilk;
+}
+
+.timer-btn-area {
+  cursor: pointer;
+}
+
+.delete-timer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  font-size: 28px;
+  cursor: pointer;
 }
