@@ -9,23 +9,23 @@ class Timers extends Component {
       _timers: [],
       timers: [{
         name: 'Homer Simpson',
-        time: '00:00',
+        time: 0,
         isRunning: false,
       }, {
         name: 'Bart Simpson',
-        time: '00:00',
+        time: 0,
         isRunning: false,
       }, {
         name: 'Milhouse Van houtten',
-        time: '00:00',
+        time: 0,
         isRunning: false,
       }, {
         name: 'Carl Carlson',
-        time: '00:00',
+        time: 0,
         isRunning: false,
       }, {
         name: 'Krusty theKlown',
-        time: '00:00',
+        time: 0,
         isRunning: false,
       }],
     }
@@ -70,7 +70,7 @@ class Timers extends Component {
 
               <Row gutter={16}><AddTimer onSubmit={this.onSubmit} /></Row>
 
-              <div style={{ background: '#ECECEC', padding: '30px' }}>
+              <div>
                   <Row gutter={16}>
                       {timers && timers.length
                         ? timers.sort(this.sortByName).map(timer => (

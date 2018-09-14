@@ -25,7 +25,7 @@ class AddTimerForm extends React.Component {
       if (!err) {
         onSubmit({
           name: values.userName,
-          time: '00:00',
+          time: 0,
           isRunning: false,
         });
         this.props.form.setFields({
