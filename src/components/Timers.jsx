@@ -74,18 +74,24 @@ class Timers extends Component {
       const { timers } = this.state;
       return (
           <div>
-              <h1>Meeting Chess Timers</h1>
+              <div className="header">
+                  <h1>Meeting Chess Timers</h1>
+              </div>
 
-              <Row gutter={16}><AddTimer onSubmit={this.onSubmit} /></Row>
+              <div className="container">
 
-              <div className="timers">
-                  <Row gutter={16}>
-                      {timers && timers.length
-                        ? timers.sort(this.sortByName).map(timer => (
-                            <Timer timer={timer} key={timer.name} onClick={_timer => this.activateTimer(_timer)} onDelete={this.onDelete} />)
-                        )
-                        : <EmptyTimer />}
-                  </Row>
+                  <AddTimer onSubmit={this.onSubmit} />
+
+
+                  <div className="timers">
+                      <Row gutter={16}>
+                          {timers && timers.length
+                            ? timers.sort(this.sortByName).map(timer => (
+                                <Timer timer={timer} key={timer.name} onClick={_timer => this.activateTimer(_timer)} onDelete={this.onDelete} />)
+                            )
+                            : <EmptyTimer />}
+                      </Row>
+                  </div>
               </div>
 
           </div>

@@ -52,19 +52,22 @@ class AddTimerForm extends React.Component {
     // Only show error after a field is touched.
     const userNameError = isFieldTouched('userName') && getFieldError('userName');
     return (
-        <Form layout="inline" onSubmit={this.handleSubmit}>
-            <FormItem validateStatus={userNameError ? 'error' : ''} help={userNameError || ''}>
-                {getFieldDecorator('userName', formRules.username)(
-                    <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="name" />
-                )}
-            </FormItem>
+        <div className="add-timer">
+            <div className="form-bg" />
+            <Form onSubmit={this.handleSubmit} className="add-timer-form">
+                <FormItem validateStatus={userNameError ? 'error' : ''} help={userNameError || ''}>
+                    {getFieldDecorator('userName', formRules.username)(
+                        <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="name" />
+                    )}
+                </FormItem>
 
-            <FormItem>
-                <Button type="primary" htmlType="submit" disabled={hasErrors(getFieldsError())}>
+                <FormItem>
+                    <Button type="primary" htmlType="submit" disabled={hasErrors(getFieldsError())}>
                     Add Member
-                </Button>
-            </FormItem>
-        </Form>
+                    </Button>
+                </FormItem>
+            </Form>
+        </div>
     );
   }
 }

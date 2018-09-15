@@ -1,9 +1,20 @@
 .App {
   text-align: center;
+}
+.container {
   width: 90%;
   margin: 0 auto;
 }
-
+.header {
+  border-bottom: 1px solid #ccc;
+  text-align: left;
+  padding-left: 35px;
+  line-height: 45px;
+}
+.header h1 {
+  color: #607D8B;
+  font-weight: 200;
+}
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
@@ -51,3 +62,38 @@
   font-size: 28px;
   cursor: pointer;
 }
+
+.add-timer {
+  background-image: url(../assets/images/meeting-4.jpg);
+  background-size: cover;
+  height: 500px;
+  padding-top: 100px;
+
+}
+
+.form-bg {
+  width: 90%;
+  height: 300px;
+  background: #000;
+  margin: 0 auto;
+  opacity: 0.5;
+}
+
+.add-timer-form {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%) !important;
+    width: 75%;
+
+    display: flex;
+    justify-content: center;
+}
+input, button {
+  border-radius: 0 !important;
+  height: 45px !important;
+}
+input {
+  width: 400px;
+}
+
