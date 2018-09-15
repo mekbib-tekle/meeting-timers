@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .App-logo {
@@ -21,7 +23,9 @@
 .App-intro {
   font-size: large;
 }
-
+.timers {
+  padding: 30px 10px;
+}
 .ant-card {
   margin-bottom: 20px !important;
   margin-right: 10px !important;

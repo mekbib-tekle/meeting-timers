@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row } from 'antd';
+import { Layout, Row } from 'antd';
 import AddTimer from './AddTimer';
 import Timer from './Timer';
 import EmptyTimer from './EmptyTimer';
@@ -78,7 +78,7 @@ class Timers extends Component {
 
               <Row gutter={16}><AddTimer onSubmit={this.onSubmit} /></Row>
 
-              <div>
+              <div className="timers">
                   <Row gutter={16}>
                       {timers && timers.length
                         ? timers.sort(this.sortByName).map(timer => (
@@ -87,6 +87,7 @@ class Timers extends Component {
                         : <EmptyTimer />}
                   </Row>
               </div>
+
           </div>
       );
     }

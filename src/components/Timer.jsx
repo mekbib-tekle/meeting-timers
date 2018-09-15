@@ -44,7 +44,7 @@ class Timer extends Component {
       const { timer, onClick, onDelete } = this.props;
       const { time } = this.state;
       return (
-          <Col span={6}>
+          <Col xs={24} sm={12} md={8} lg={8} xl={8}>
               <Card title={timer.name} bordered className={timer.isRunning ? 'running' : 'paused'}>
                   <div onClick={() => { this.toggleRunner(timer); onClick(timer); }} className="timer-btn-area">
                       <div>{hhMMss(time)}</div>
