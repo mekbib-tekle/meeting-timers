@@ -20,7 +20,9 @@ class Timer extends Component {
       this.setState({ time });
     }
 
-    componentDidUpdate({ timer }) {
+    // while one timer is running, the user could start another timer
+    // in such a case, the previously running timer should be stopped
+    componentDidUpdate({ timer }) { // timer = oldTimer
       if (timer.isRunning && !this.props.timer.isRunning) {
         clearInterval(this.interval);
       }
@@ -57,14 +59,6 @@ class Timer extends Component {
                             }
                       </div>
                   </div>
-
-                  {/* <div onClick={() => { this.toggleRunner(timer); onClick(timer); }} className="timer-btn-area">
-                                       <div className="time-counter">{hhMMss(time)}</div>
-                                       { timer.isRunning
-                                         ? (<div className="timer-btn"><Icon type="pause-circle" theme="outlined" /> Pause Timer</div>)
-                                         : (<div className="timer-btn"><Icon type="play-circle" theme="outlined" /> Start Timer </div>)
-                                       }
-                                   </div> */}
               </Card>
 
               <div className="delete-timer">

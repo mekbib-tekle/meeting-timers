@@ -40,6 +40,9 @@
 .ant-card {
   margin-bottom: 20px !important;
   margin-right: 10px !important;
+
+  box-shadow: rgb(186, 186, 187) 0px 2px 5px 0px;
+  border: 0px !important;
 }
 .ant-card-body {
   padding: 0px !important;
@@ -66,7 +69,8 @@
   align-items: center;
 }
 .timer-body:hover {
-  background-color: #c0f9c1;
+  /*background-color: #c0f9c1;*/
+  box-shadow: rgb(186, 186, 187) 0px 7px 12px 2px;
 }
 
 .time-counter {
