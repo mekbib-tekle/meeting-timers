@@ -45,22 +45,33 @@ class Timer extends Component {
       const { time } = this.state;
       return (
           <Col xs={24} sm={12} md={8} lg={8} xl={8}>
-              <Card title={timer.name} bordered className={timer.isRunning ? 'running' : 'paused'}>
-                  <div onClick={() => { this.toggleRunner(timer); onClick(timer); }} className="timer-btn-area">
-                      <div>{hhMMss(time)}</div>
-                      { timer.isRunning
-                        ? (<div><Icon type="pause-circle" theme="outlined" /> Pause Timer</div>)
-                        : (<div><Icon type="play-circle" theme="outlined" /> Start Timer </div>)
-                      }
+              <Card className={timer.isRunning ? 'running' : 'paused'}>
+                  <div className="timer-title">{timer.name}</div>
 
+                  <div onClick={() => { this.toggleRunner(timer); onClick(timer); }} className="timer-body">
+                      <div className="time-counter">{hhMMss(time)}</div>
+                      <div className="timer-btn">
+                          { timer.isRunning
+                            ? (<div><Icon type="pause-circle" theme="outlined" /> Pause Timer</div>)
+                            : (<div><Icon type="play-circle" theme="outlined" /> Start Timer </div>)
+                            }
+                      </div>
                   </div>
 
-                  <div className="delete-timer">
-                      <Popconfirm title="Are you sure?" onConfirm={() => onDelete(timer)} okText="Yes" cancelText="No">
-                          <Icon type="close-circle" theme="outlined" />
-                      </Popconfirm>
-                  </div>
+                  {/* <div onClick={() => { this.toggleRunner(timer); onClick(timer); }} className="timer-btn-area">
+                                       <div className="time-counter">{hhMMss(time)}</div>
+                                       { timer.isRunning
+                                         ? (<div className="timer-btn"><Icon type="pause-circle" theme="outlined" /> Pause Timer</div>)
+                                         : (<div className="timer-btn"><Icon type="play-circle" theme="outlined" /> Start Timer </div>)
+                                       }
+                                   </div> */}
               </Card>
+
+              <div className="delete-timer">
+                  <Popconfirm title="Are you sure?" onConfirm={() => onDelete(timer)} okText="Yes" cancelText="No">
+                      <Icon type="close-circle" theme="outlined" />
+                  </Popconfirm>
+              </div>
           </Col>);
     }
 }

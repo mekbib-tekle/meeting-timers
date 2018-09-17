@@ -55,17 +55,24 @@ class AddTimerForm extends React.Component {
         <div className="add-timer">
             <div className="form-bg" />
             <Form onSubmit={this.handleSubmit} className="add-timer-form">
-                <FormItem validateStatus={userNameError ? 'error' : ''} help={userNameError || ''}>
-                    {getFieldDecorator('userName', formRules.username)(
-                        <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="name" />
-                    )}
-                </FormItem>
+                <div className="form-header">
+                    <h1>Meeting Timers</h1>
+                    <h2>Track how much time each meeting participant takes</h2>
+                </div>
+                <div className="form-items-wrapper">
+                    <FormItem validateStatus={userNameError ? 'error' : ''} help={userNameError || ''}>
+                        {getFieldDecorator('userName', formRules.username)(
+                            <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="name" />
+                        )}
+                    </FormItem>
 
-                <FormItem>
-                    <Button type="primary" htmlType="submit" disabled={hasErrors(getFieldsError())}>
+                    <FormItem>
+                        <Button type="primary" htmlType="submit" disabled={hasErrors(getFieldsError())}>
                     Add Member
-                    </Button>
-                </FormItem>
+                        </Button>
+                    </FormItem>
+
+                </div>
             </Form>
         </div>
     );

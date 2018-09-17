@@ -2,7 +2,7 @@ import React from 'react';
 import { Alert } from 'antd';
 
 const EmptyTimer = () => (
-    <Alert message="Add Timers and Start Tracking!" type="info" />
+    <Alert message="Add Meeting Participants and Start Tracking their time!" type="info" />
 );
 
 export default EmptyTimer;
