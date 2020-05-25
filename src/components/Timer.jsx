@@ -5,10 +5,6 @@ import {
 import { hhMMss } from '../utils';
 
 class Timer extends Component {
-  constructor() {
-    super();
-  }
-
     state = {
       time: 0,
     }
