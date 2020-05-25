@@ -5,6 +5,7 @@ import Timer from './Timer';
 import EmptyTimer from './EmptyTimer';
 
 class Timers extends Component {
+    // meeting participants
     state = {
       _timers: [],
       timers: [{
