@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Layout, Row } from 'antd';
+import { Row } from 'antd';
 import AddTimer from './AddTimer';
 import Timer from './Timer';
 import EmptyTimer from './EmptyTimer';

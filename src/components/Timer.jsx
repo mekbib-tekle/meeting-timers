@@ -7,7 +7,6 @@ import { hhMMss } from '../utils';
 class Timer extends Component {
   constructor() {
     super();
-    const interval = null;
   }
 
     state = {
